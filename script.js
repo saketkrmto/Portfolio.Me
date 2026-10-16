@@ -28,7 +28,7 @@
       const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
       themeButton.setAttribute("aria-label", `Switch to ${nextTheme} theme`);
       themeButton.title = `Switch to ${nextTheme} theme`;
-      if (themeColor) themeColor.content = root.dataset.theme === "light" ? "#f4f7ef" : "#10120f";
+      if (themeColor) themeColor.content = root.dataset.theme === "light" ? "#fafaf9" : "#121214";
     };
     updateThemeButton();
     themeButton.addEventListener("click", () => {
