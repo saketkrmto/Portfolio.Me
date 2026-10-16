@@ -659,6 +659,229 @@ a {
   margin: 0 0 4px;
 }
 
+/* Forensic Lens Interactive Scrollytelling Card */
+.forensic-lens-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 34px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.25s ease;
+}
+
+.forensic-lens-card:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.lens-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lens-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.lens-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.lens-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lens-tab {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: 10px var(--mono);
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.lens-tab:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.lens-tab.active {
+  background: var(--accent);
+  color: #121214;
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.tab-idx {
+  opacity: 0.7;
+}
+
+.lens-tab.active .tab-idx {
+  opacity: 0.9;
+}
+
+.lens-body {
+  position: relative;
+  min-height: 200px;
+}
+
+.lens-state {
+  display: none;
+  animation: fadeInLens 0.35s ease forwards;
+}
+
+.lens-state.active {
+  display: block;
+}
+
+@keyframes fadeInLens {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.raw-terminal {
+  background: #0e0e11;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.raw-terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.raw-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3f3f46;
+}
+
+.raw-title {
+  margin-left: 6px;
+  font: 9px var(--mono);
+  color: var(--muted);
+}
+
+.raw-code-block {
+  font: 10.5px/1.8 var(--mono);
+  color: #a1a1aa;
+}
+
+.raw-code-block div {
+  display: flex;
+  gap: 12px;
+}
+
+.raw-code-block span {
+  color: #52525b;
+  user-select: none;
+}
+
+.raw-faded {
+  color: #71717a;
+  font-style: italic;
+}
+
+.clarity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(ellipse at 50% 0%, rgba(251, 191, 36, 0.05), transparent 70%);
+}
+
+.clarity-metric-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  padding: 16px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.clarity-metric-card small {
+  font: 8px var(--mono);
+  color: var(--accent);
+  letter-spacing: 0.8px;
+}
+
+.clarity-metric-card strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.clarity-metric-card p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lens-caption {
+  padding: 14px 20px;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: #d4d4d8;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.lens-caption strong {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-right: 6px;
+}
+
+/* Project Field Note Badge */
+.project-field-note {
+  background: rgba(251, 191, 36, 0.05);
+  border-left: 2px solid var(--accent);
+  padding: 9px 12px;
+  margin: 0 0 14px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #d4d4d8;
+  border-radius: 0 3px 3px 0;
+}
+
+.field-label {
+  font: 700 8.5px var(--mono);
+  color: var(--accent);
+  letter-spacing: 0.8px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1653,6 +1876,78 @@ button,
   color: #44403c;
 }
 
+:root[data-theme="light"] .forensic-lens-card {
+  background: #ffffff;
+  border-color: #e7e5e4;
+  box-shadow: 0 14px 30px rgba(28, 25, 23, 0.06);
+}
+
+:root[data-theme="light"] .forensic-lens-card:hover {
+  border-color: #f59e0b;
+}
+
+:root[data-theme="light"] .lens-top {
+  background: #fafaf9;
+  border-bottom-color: #e7e5e4;
+}
+
+:root[data-theme="light"] .lens-tab {
+  border-color: #d6d3d1;
+  color: #78716c;
+}
+
+:root[data-theme="light"] .lens-tab.active {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #121214;
+}
+
+:root[data-theme="light"] .raw-terminal {
+  background: #1c1917;
+  border-bottom-color: #e7e5e4;
+}
+
+:root[data-theme="light"] .raw-code-block {
+  color: #d6d3d1;
+}
+
+:root[data-theme="light"] .raw-code-block span {
+  color: #78716c;
+}
+
+:root[data-theme="light"] .clarity-grid {
+  background: #ffffff;
+  border-bottom-color: #e7e5e4;
+}
+
+:root[data-theme="light"] .clarity-metric-card {
+  background: #fafaf9;
+  border-color: #e7e5e4;
+}
+
+:root[data-theme="light"] .clarity-metric-card strong {
+  color: #1c1917;
+}
+
+:root[data-theme="light"] .clarity-metric-card p {
+  color: #57534e;
+}
+
+:root[data-theme="light"] .lens-caption {
+  background: #fafaf9;
+  color: #44403c;
+}
+
+:root[data-theme="light"] .project-field-note {
+  background: rgba(245, 158, 11, 0.08);
+  border-left-color: #d97706;
+  color: #292524;
+}
+
+:root[data-theme="light"] .field-label {
+  color: #b45309;
+}
+
 :root[data-theme="light"] .project-card {
   border-color: #e7e5e4;
 }
@@ -1906,6 +2201,14 @@ button,
   }
   .contact-bottom span {
     width: 100%;
+  }
+  .clarity-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .raw-code-block {
+    font-size: 9.5px;
+    overflow-x: auto;
   }
   .footer-inner {
     padding: 22px 0;

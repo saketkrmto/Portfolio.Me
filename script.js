@@ -39,9 +39,29 @@
       updateThemeButton();
     });
   }
+  // Forensic Lens interactive switcher
+  const lensTabs = document.querySelectorAll(".lens-tab");
+  const lensStates = document.querySelectorAll(".lens-state");
+  if (lensTabs.length && lensStates.length) {
+    lensTabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const view = tab.getAttribute("data-view");
+        lensTabs.forEach(t => {
+          const isActive = t === tab;
+          t.classList.toggle("active", isActive);
+          t.setAttribute("aria-selected", String(isActive));
+        });
+        lensStates.forEach(state => {
+          const isTarget = state.id === `lens-${view}`;
+          state.classList.toggle("active", isTarget);
+        });
+      });
+    });
+  }
+
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
-  const targets = document.querySelectorAll(".section-kicker, .about-grid, .project-card, .skill-group, .timeline-item, .contact-pretitle, .contact-section h2");
+  const targets = document.querySelectorAll(".section-kicker, .about-grid, .forensic-lens-card, .project-card, .skill-group, .timeline-item, .contact-pretitle, .contact-section h2");
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     targets.forEach((el, i) => { el.classList.add("js-reveal"); el.style.transitionDelay = `${(i % 4) * 65}ms`; });
     const observer = new IntersectionObserver((entries, obs) => entries.forEach(entry => {
