@@ -587,10 +587,11 @@ a {
 }
 
 .telemetry-value {
-  font-size: 13px;
+  font-size: clamp(11px, 1.25vw, 13px);
   font-weight: 700;
   color: var(--text);
   font-family: var(--mono);
+  white-space: nowrap;
 }
 
 .section h2 {
