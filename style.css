@@ -426,6 +426,173 @@ a {
   margin-top: 32px;
 }
 
+.about-quote-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-motion-card {
+  margin-top: 32px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.about-motion-card:hover {
+  border-color: rgba(251, 191, 36, 0.45);
+  transform: translateY(-3px);
+}
+
+.motion-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.motion-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.motion-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: beaconPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes beaconPulse {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(251, 191, 36, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+}
+
+.motion-chip {
+  font: 9px var(--mono);
+  color: var(--accent);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.8px;
+}
+
+.motion-canvas-wrap {
+  position: relative;
+  height: 130px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 20%, rgba(251, 191, 36, 0.08), transparent 75%);
+}
+
+.motion-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.motion-grid-line {
+  stroke: #ffffff;
+  stroke-opacity: 0.08;
+  stroke-dasharray: 4 4;
+}
+
+.motion-wave-group {
+  will-change: transform;
+}
+
+.motion-wave-fast {
+  animation: waveStreamFast 7s linear infinite;
+}
+
+.motion-wave-slow {
+  animation: waveStreamSlow 12s linear infinite reverse;
+}
+
+@keyframes waveStreamFast {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-200px); }
+}
+
+@keyframes waveStreamSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-200px); }
+}
+
+.motion-scan-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, var(--accent) 50%, transparent);
+  box-shadow: 0 0 16px var(--accent);
+  animation: scanBeam 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes scanBeam {
+  0% { left: -5%; opacity: 0; }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.85; }
+  100% { left: 105%; opacity: 0; }
+}
+
+.motion-dot-peak {
+  animation: pulseDot 2.4s ease-in-out infinite;
+}
+
+.dot-p2 {
+  animation-delay: 0.8s;
+}
+
+.dot-p3 {
+  animation-delay: 1.6s;
+}
+
+@keyframes pulseDot {
+  0%, 100% { r: 3.5; opacity: 0.65; }
+  50% { r: 5.5; opacity: 1; filter: drop-shadow(0 0 8px var(--accent)); }
+}
+
+.motion-telemetry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.telemetry-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.telemetry-label {
+  font: 8px var(--mono);
+  letter-spacing: 0.8px;
+  color: var(--muted);
+}
+
+.telemetry-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--mono);
+}
+
 .section h2 {
   font-size: clamp(34px, 4.2vw, 52px);
   letter-spacing: -2px;
@@ -1433,6 +1600,49 @@ button,
 
 :root[data-theme="light"] .muted {
   color: #78716c;
+}
+
+:root[data-theme="light"] .about-motion-card {
+  background: #ffffff;
+  border-color: #e7e5e4;
+  box-shadow: 0 14px 30px rgba(28, 25, 23, 0.06);
+}
+
+:root[data-theme="light"] .about-motion-card:hover {
+  border-color: #f59e0b;
+}
+
+:root[data-theme="light"] .motion-card-header {
+  background: #fafaf9;
+  border-bottom-color: #e7e5e4;
+}
+
+:root[data-theme="light"] .motion-chip {
+  background: rgba(217, 119, 6, 0.1);
+  border-color: rgba(217, 119, 6, 0.28);
+  color: #b45309;
+}
+
+:root[data-theme="light"] .motion-canvas-wrap {
+  background: radial-gradient(ellipse at 50% 20%, rgba(245, 158, 11, 0.08), transparent 75%);
+}
+
+:root[data-theme="light"] .motion-grid-line {
+  stroke: #1c1917;
+  stroke-opacity: 0.07;
+}
+
+:root[data-theme="light"] .motion-telemetry {
+  background: #fafaf9;
+  border-top-color: #e7e5e4;
+}
+
+:root[data-theme="light"] .telemetry-label {
+  color: #78716c;
+}
+
+:root[data-theme="light"] .telemetry-value {
+  color: #1c1917;
 }
 
 :root[data-theme="light"] .about-body p,

@@ -75,7 +75,65 @@
     <section class="section-wrap about section" id="about">
       <div class="section-kicker"><span>01</span> / A LITTLE ABOUT ME</div>
       <div class="about-grid">
-        <h2>Numbers tell stories.<br><span class="muted">I like finding them.</span></h2>
+        <div class="about-quote-col">
+          <h2>Numbers tell stories.<br><span class="muted">I like finding them.</span></h2>
+          <div class="about-motion-card" aria-label="Interactive real-time data motion graphic">
+            <div class="motion-card-header">
+              <div class="motion-status">
+                <span class="motion-pulse-dot"></span>
+                <span class="motion-status-text">ANALYTICS STREAM // LIVE</span>
+              </div>
+              <span class="motion-chip">REALTIME</span>
+            </div>
+            <div class="motion-canvas-wrap">
+              <svg class="motion-svg" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="amberGlow" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.25" />
+                    <stop offset="100%" stop-color="var(--accent)" stop-opacity="0.0" />
+                  </linearGradient>
+                  <linearGradient id="roseGlow" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--accent2)" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="var(--accent2)" stop-opacity="0.0" />
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="30" x2="400" y2="30" class="motion-grid-line" />
+                <line x1="0" y1="60" x2="400" y2="60" class="motion-grid-line" />
+                <line x1="0" y1="90" x2="400" y2="90" class="motion-grid-line" />
+                
+                <g class="motion-wave-group motion-wave-slow">
+                  <path class="motion-wave-fill-2" d="M 0 65 Q 50 40 100 65 T 200 65 T 300 65 T 400 65 T 500 65 T 600 65 T 700 65 T 800 65 L 800 120 L 0 120 Z" fill="url(#roseGlow)"></path>
+                  <path class="motion-wave-line-2" d="M 0 65 Q 50 40 100 65 T 200 65 T 300 65 T 400 65 T 500 65 T 600 65 T 700 65 T 800 65" fill="none" stroke="var(--accent2)" stroke-width="1.8" stroke-opacity="0.7"></path>
+                </g>
+
+                <g class="motion-wave-group motion-wave-fast">
+                  <path class="motion-wave-fill-1" d="M 0 50 Q 50 15 100 50 T 200 50 T 300 50 T 400 50 T 500 50 T 600 50 T 700 50 T 800 50 L 800 120 L 0 120 Z" fill="url(#amberGlow)"></path>
+                  <path class="motion-wave-line-1" d="M 0 50 Q 50 15 100 50 T 200 50 T 300 50 T 400 50 T 500 50 T 600 50 T 700 50 T 800 50" fill="none" stroke="var(--accent)" stroke-width="2.2"></path>
+                </g>
+
+                <circle class="motion-dot-peak dot-p1" cx="150" cy="50" r="3.5" fill="var(--accent)"></circle>
+                <circle class="motion-dot-peak dot-p2" cx="250" cy="50" r="3.5" fill="var(--accent)"></circle>
+                <circle class="motion-dot-peak dot-p3" cx="350" cy="50" r="3.5" fill="var(--accent2)"></circle>
+              </svg>
+              <div class="motion-scan-beam" aria-hidden="true"></div>
+            </div>
+
+            <div class="motion-telemetry">
+              <div class="telemetry-item">
+                <span class="telemetry-label">SIGNAL CLARITY</span>
+                <span class="telemetry-value">99.4%</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">CONVERGENCE</span>
+                <span class="telemetry-value">0.002</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">THROUGHPUT</span>
+                <span class="telemetry-value">1.4 M/s</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="about-body"><p>I'm pursuing a B.E. in Data Science at Bangalore Institute of Technology. Right now, I enjoy building dashboards, exploring tools across data analytics, and learning how data moves through the wider data engineering ecosystem — from raw information to something people can use.</p>
           <p>For me, good analysis isn't just about a chart or a score. It's about helping someone see what matters and decide what to do next. Longer term, I'd like to build my own startup — after gaining the business knowledge and real-world experience to turn a useful idea into a sustainable venture.</p>
           <div class="principles"><div><span>01</span><strong>Ask better questions</strong></div><div><span>02</span><strong>Keep it understandable</strong></div><div><span>03</span><strong>Make insights useful</strong></div></div>
